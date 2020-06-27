@@ -57,25 +57,10 @@
       </div>
       <button type="submit" class="btn btn-primary">Search!</button>
     </form>
-
+    <br />
     <div class="container">
-      <h2>List Group With Custom Content</h2>
-      <div class="list-group" id="article-list">
-        <!-- <a href="#" class="list-group-item">
-          <h4 class="list-group-item-heading">First List Group Item Heading</h4>
-          <p class="list-group-item-text"></p>
-        </a>
-        <a href="#" class="list-group-item">
-          <h4 class="list-group-item-heading">
-            Second List Group Item Heading
-          </h4>
-          <p class="list-group-item-text"></p>
-        </a>
-        <a href="#" class="list-group-item">
-          <h4 class="list-group-item-heading">Third List Group Item Heading</h4>
-          <p class="list-group-item-text"></p>
-        </a> -->
-      </div>
+      <h2>Search Results</h2>
+      <div class="list-group" id="article-list"></div>
     </div>
 
     <script
@@ -107,9 +92,14 @@
             // first put the article.headline.main as a headline <h4> & append
             var headline = $("<h4>").text(article.headline.main);
             headline.attr("class", "list-group-item-heading");
-            console.log(headline);
             articlebutton.append(headline);
             // then put the article.abstract as subheader <p> & append
+
+            var summary = $("<p>").text(article.abstract);
+            summary.attr("class", "list-group-item-text");
+            console.log(summary);
+            articlebutton.append(summary);
+            // and finally add the article button
 
             $("#article-list").append(articlebutton);
           });
